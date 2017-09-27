@@ -7,11 +7,17 @@ app.use('/store', function(req, res, next){
 });
 
 app.get('/', function (req, res) {
-    res.send('Hello world!');
+    console.log("Redirected to /msg");
+    res.redirect('/msg');
 });
 
+app.get('/msg', function (req, res) {
+    res.send("Got to /store in order to enter our store website")
+});
+
+
 app.get('/store', function (req, res) {
-    res.send('To jest sklep');
+    res.send('Witaj w aplikacji sklep');
 });
 
 app.listen(3000, function() {
